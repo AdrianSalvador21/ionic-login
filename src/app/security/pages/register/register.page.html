@@ -1,10 +1,11 @@
 <ion-content>
-  <div class="register-background">
-    <div class="register-image-container">
-      <ion-img class="register-img" src="/assets/img/login-icon4.svg"></ion-img>
+  <div class="login-background">
+    <div class="login-image-container">
+      <ion-img class="login-img" src="/assets/img/login-icon4.svg"></ion-img>
     </div>
 
-    <div class="register-container">
+
+    <div class="login-container">
       <div class="ion-text-center">
         <ion-label class="ft-2r">Register</ion-label>
       </div>
@@ -30,7 +31,7 @@
             <small *ngIf="!passwordsMatch() && confirmPasswordInput.valid && confirmPasswordInput.touched" class="error-msg">Passwords don't match</small>
           </div>
 
-          <ion-button (click)="registerEmail(form)" color="light" class="register-button" expand="block">Register</ion-button >
+          <ion-button (click)="registerEmail(form)" color="light" class="login-button" expand="block">Register</ion-button >
         </form>
 
         <p (click)="goToLogin()">Already have any account? Sign In</p>
