@@ -24,3 +24,21 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.ft-2r {
+  font-size: 2rem;
+}
+
+.login-background {
+  background-image: url('/assets/img/login-bg.svg');
+  width: 100vw;
+  height: 100vh;
+  background-position: 1px -88px;
+  background-size: cover;
+}
+
+.error-msg {
+  margin-top: 6px;
+  color: #b74d4d;
+}

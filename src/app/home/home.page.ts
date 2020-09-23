@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {SecurityService} from '../_providers/security.service';
+import {LoadingController, NavController} from '@ionic/angular';
+import {Storage} from '@ionic/storage';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,22 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(public securityService: SecurityService,
+              public loadingController: LoadingController,
+              public storage: Storage,
+              public nav: NavController) {}
+
+  async logout() {
+    const loading = await this.loadingController.create({
+      message: 'Cargando...'
+    });
+    await loading.present();
+    this.storage.remove('uid').then(() => {
+      this.securityService.logout().then(() => {
+        this.nav.navigateRoot('/login');
+        loading.dismiss();
+      });
+    });
+  }
 
 }

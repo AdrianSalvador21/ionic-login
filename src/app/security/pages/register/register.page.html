@@ -1,0 +1,40 @@
+<ion-content>
+  <div class="register-background">
+    <div class="register-image-container">
+      <ion-img class="register-img" src="/assets/img/login-icon4.svg"></ion-img>
+    </div>
+
+    <div class="register-container">
+      <div class="ion-text-center">
+        <ion-label class="ft-2r">Register</ion-label>
+      </div>
+
+      <div class="form-container">
+        <form #form="ngForm">
+          <div class="input-container">
+            <label>Email</label>
+            <input #emailInput="ngModel" [(ngModel)]="registerInfo.email" required name="email" type="email" placeholder="Email">
+            <small *ngIf="emailInput.invalid && emailInput.touched" class="error-msg">Invalid email</small>
+          </div>
+
+          <div class="input-container">
+            <label>Password</label>
+            <input #passwordInput="ngModel" [(ngModel)]="registerInfo.password" required name="password" type="password" placeholder="Password">
+            <small *ngIf="passwordInput.invalid && passwordInput.touched" class="error-msg">Invalid password</small>
+          </div>
+
+          <div class="input-container">
+            <label>Confirm Password</label>
+            <input #confirmPasswordInput="ngModel" [(ngModel)]="registerInfo.confirm_password" required name="confirm_password" type="password" placeholder="Confirm password">
+            <small *ngIf="confirmPasswordInput.invalid && confirmPasswordInput.touched" class="error-msg">Invalid confirm password</small>
+            <small *ngIf="!passwordsMatch() && confirmPasswordInput.valid && confirmPasswordInput.touched" class="error-msg">Passwords don't match</small>
+          </div>
+
+          <ion-button (click)="registerEmail(form)" color="light" class="register-button" expand="block">Register</ion-button >
+        </form>
+
+        <p (click)="goToLogin()">Already have any account? Sign In</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

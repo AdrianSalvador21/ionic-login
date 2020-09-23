@@ -1,0 +1,41 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="login-background">
+
+    <div class="login-image-container">
+      <ion-img class="login-img" src="/assets/img/login-icon4.svg"></ion-img>
+    </div>
+
+    <div class="login-container">
+      <div class="ion-text-center">
+        <ion-label class="ft-2r">Login</ion-label>
+      </div>
+
+      <div class="form-container">
+        <form #form="ngForm">
+          <div class="input-container">
+            <label>Email</label>
+            <input #emailInput="ngModel" [(ngModel)]="loginInfo.email" required name="email" type="email" placeholder="Email">
+            <small *ngIf="emailInput.invalid && emailInput.touched" class="error-msg">Invalid email</small>
+          </div>
+
+          <div class="input-container">
+            <label>Password</label>
+            <input #passwordInput="ngModel" [(ngModel)]="loginInfo.password" required name="password" type="password" placeholder="Password">
+            <small *ngIf="passwordInput.invalid && passwordInput.touched" class="error-msg">Invalid password</small>
+          </div>
+
+          <ion-button (click)="emailLogin(form)" color="light" class="login-button" expand="block">Login</ion-button >
+
+        </form>
+
+        <p (click)="goToRegister()">Don't have any account? Sign Up</p>
+      </div>
+    </div>
+  </div>
+</ion-content>
